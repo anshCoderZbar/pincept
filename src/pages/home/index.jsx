@@ -5,11 +5,6 @@ export default function Home() {
   const { t } = useTranslation();
   return (
     <>
-      <br />
-      <br />
-      <br />
-      <br />
-
       <h1>{t("hello world")}</h1>
     </>
   );
