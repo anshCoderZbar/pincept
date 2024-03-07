@@ -1,39 +1,26 @@
-// default Imports
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useAtom } from "jotai";
-
-// custom Imports
 
 import { BuildingIcon, MailIcon } from "app/icons";
 import { OutlineHeartIcon, OverviewIcon } from "app/icons";
-import { isLoginActive } from "store/authStore";
 
-// images
 import logo from "assets/logo.svg";
-import loginSvg from "assets/login.svg";
-import { Login } from "components/auth/Login";
+
 import { ChangeLanguage } from "./ChangeLanguage";
-import { SignUp } from "components/auth/SignUp";
+import { Login, SignUp } from "app/auth";
+import { MODAL_IDS } from "lib/constants/modal-ids";
 
 export const Header = () => {
-  const { i18n } = useTranslation();
   const [navActive, setNavActive] = useState(false);
-  const [_, setIsModalActive] = useAtom(isLoginActive);
-
-  const handleLanguageChange = (code) => {
-    i18n.changeLanguage(code);
-  };
 
   return (
     <>
       <header>
-        <div class="nav-main">
+        <div className="nav-main">
           <div className="container-fluid">
             <div className="row">
               <div className="col-12">
                 <nav className="nav">
-                  <a href="index.php" className="brand">
+                  <a href="/#" className="brand">
                     <img src={logo} className="img-fluid" alt="logo" />
                   </a>
                   <div
@@ -44,7 +31,7 @@ export const Header = () => {
                     <ul className="mega-menu">
                       <li className="dropdownn">
                         <div>
-                          <a href="charts.php">
+                          <a href="/#">
                             <OverviewIcon />
                             <span>Add Services</span>
                           </a>
@@ -53,22 +40,22 @@ export const Header = () => {
                       <li className="dropdownn">
                         <div>
                           <a
-                            href="charts.php"
+                            href="/#"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                           >
                             <OverviewIcon />
                             <span>Overview</span>
                           </a>
-                          <ul class="dropdown-menu options_xss prof-drop">
+                          <ul className="dropdown-menu options_xss prof-drop">
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-person-fill"></i>Buyer
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-person-fill"></i>Buyer
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-person-fill"></i>Seller
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-person-fill"></i>Seller
                               </a>
                             </li>
                           </ul>
@@ -76,7 +63,7 @@ export const Header = () => {
                       </li>
                       <li className="dropdownn">
                         <div>
-                          <a href="current-project.php">
+                          <a href="/#">
                             <BuildingIcon />
                             <span>Orders</span>
                           </a>
@@ -84,7 +71,7 @@ export const Header = () => {
                       </li>
                       <li className="dropdownn">
                         <div>
-                          <a href="chat/chat.php">
+                          <a href="/#">
                             <MailIcon />
                             <span>Chat</span>
                           </a>
@@ -92,7 +79,7 @@ export const Header = () => {
                       </li>
                       <li className="dropdownn ">
                         <div>
-                          <a href="listing.php">
+                          <a href="/#">
                             <OutlineHeartIcon />
                             <span>Whishlist</span>
                           </a>
@@ -100,94 +87,97 @@ export const Header = () => {
                       </li>
                     </ul>
                   </div>
-                  <div class="ss">
-                    <li class="ki_s">
+                  <div className="ss">
+                    <li className="ki_s">
                       <a
-                        href="javascript:viod(0)"
-                        class="language-toggle"
+                        href="/#"
+                        className="language-toggle"
                         data-bs-toggle="modal"
-                        data-bs-target="#modal1"
+                        data-bs-target={`#${MODAL_IDS.CHANGE_LANGUAGE}`}
                       >
-                        <i class="bi bi-globe2"></i>
+                        <i className="bi bi-globe2"></i>
                       </a>
                     </li>
 
-                    <li class="dropdownn wd-v">
+                    <li className="dropdownn wd-v">
                       <div>
                         <a
-                          class="login-ss cxx"
-                          onClick={() => setIsModalActive(true)}
-                          data-bs-target="#loginModal"
+                          href="/#"
+                          className="login-ss cxx"
+                          data-bs-target={`#${MODAL_IDS.LOGIN_MODAL}`}
                           data-bs-toggle="modal"
                         >
                           login
                         </a>
                         <a
-                          class="login-ss join-ss"
-                          data-bs-target="#signUpModal"
+                          href="/#"
+                          className="login-ss join-ss"
+                          data-bs-target={`#${MODAL_IDS.SIGNUP_MODAL}`}
                           data-bs-toggle="modal"
                         >
                           Join
                         </a>
-                        <a
-                          href=""
+                        <span
+                          href="/#"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
-                          <ul class="dropdown-menu options_xss prof-drop">
+                          <ul className="dropdown-menu options_xss prof-drop">
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-person-lines-fill"></i>My
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-person-lines-fill"></i>My
                                 Services
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-person-circle"></i>My Profile
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-person-circle"></i>My
+                                Profile
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-briefcase-fill"></i>Add
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-briefcase-fill"></i>Add
                                 Portfolio
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-bank"></i>Bank Details
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-bank"></i>Bank Details
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-wallet-fill"></i>Earnings
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-wallet-fill"></i>Earnings
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-trash3"></i> Delete Account
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-trash3"></i> Delete Account
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item">
-                                <i class="bi bi-box-arrow-right"></i> Log Out
+                              <a href="/#" className="dropdown-item">
+                                <i className="bi bi-box-arrow-right"></i> Log
+                                Out
                               </a>
                             </li>
                           </ul>
                           hello
-                        </a>
+                        </span>
                       </div>
                     </li>
                   </div>
-                  <div class="buttons wxz_d">
+                  <div className="buttons wxz_d">
                     <button
                       onClick={() => setNavActive(!navActive)}
-                      class="menu-btn"
+                      className="menu-btn"
                     >
-                      <span class="material-symbols-outlined">
+                      <span className="material-symbols-outlined">
                         {navActive ? (
-                          <i class="bi bi-x"></i>
+                          <i className="bi bi-x"></i>
                         ) : (
-                          <i class="bi bi-list"></i>
+                          <i className="bi bi-list"></i>
                         )}
                       </span>
                     </button>
@@ -198,9 +188,9 @@ export const Header = () => {
           </div>
         </div>
       </header>
-      <ChangeLanguage modalId="modal1" />
-      <Login modalId="loginModal" />
-      <SignUp modalId="signUpModal" />
+      <ChangeLanguage modalId={MODAL_IDS.CHANGE_LANGUAGE} />
+      <Login modalId={MODAL_IDS.LOGIN_MODAL} />
+      <SignUp modalId={MODAL_IDS.SIGNUP_MODAL} />
     </>
   );
 };

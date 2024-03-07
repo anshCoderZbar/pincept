@@ -4,7 +4,7 @@ export const FormInput = (props) => {
   return (
     <input
       type={props?.type}
-      class="form-control"
+      className="form-control"
       placeholder={props?.placeholder}
       {...props}
     />

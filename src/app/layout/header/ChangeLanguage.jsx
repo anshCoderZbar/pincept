@@ -4,14 +4,14 @@ import { Modal } from "components/Modal";
 
 export const ChangeLanguage = ({ modalId }) => {
   return (
-    <Modal heading={"Select Language"} extra={"v_sz"} id={modalId}>
-      <div class="ct-topbar">
-        <ul class="list-unstyled list-inline ct-topbar__list">
-          <ul class="list-unstyled ct-language__dropdown">
+    <Modal heading={"Select Language"} headClass={"v_sz"} id={modalId}>
+      <div className="ct-topbar">
+        <ul className="list-unstyled list-inline ct-topbar__list">
+          <ul className="list-unstyled ct-language__dropdown">
             <li>
               <a
                 href="#googtrans(en|de)"
-                class="lang-es lang-select"
+                className="lang-es lang-select"
                 data-lang="de"
               >
                 German
@@ -20,7 +20,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|en)"
-                class="lang-en lang-select"
+                className="lang-en lang-select"
                 data-lang="en"
               >
                 English
@@ -29,7 +29,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|fr)"
-                class="lang-fr lang-select"
+                className="lang-fr lang-select"
                 data-lang="fr"
               >
                 French
@@ -38,7 +38,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|zh-CN)"
-                class="lang-es lang-select"
+                className="lang-es lang-select"
                 data-lang="zh-CN"
               >
                 Chinese
@@ -47,7 +47,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|ja)"
-                class="lang-es lang-select"
+                className="lang-es lang-select"
                 data-lang="ja"
               >
                 Japanese
@@ -56,7 +56,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|hi)"
-                class="lang-hi lang-select"
+                className="lang-hi lang-select"
                 data-lang="hi"
               >
                 Hindi
@@ -65,7 +65,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|el)"
-                class="lang-el lang-select"
+                className="lang-el lang-select"
                 data-lang="el"
               >
                 Greek
@@ -74,7 +74,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|id)"
-                class="lang-id lang-select"
+                className="lang-id lang-select"
                 data-lang="id"
               >
                 Indonesian
@@ -83,7 +83,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|it)"
-                class="lang-it lang-select"
+                className="lang-it lang-select"
                 data-lang="it"
               >
                 Italian
@@ -92,7 +92,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|ar)"
-                class="lang-ar lang-select"
+                className="lang-ar lang-select"
                 data-lang="ar"
               >
                 Arabic
@@ -101,7 +101,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|ru)"
-                class="lang-ru lang-select"
+                className="lang-ru lang-select"
                 data-lang="ru"
               >
                 Russian
@@ -110,7 +110,7 @@ export const ChangeLanguage = ({ modalId }) => {
             <li>
               <a
                 href="#googtrans(en|ur)"
-                class="lang-ur lang-select"
+                className="lang-ur lang-select"
                 data-lang="ur"
               >
                 Urdu
